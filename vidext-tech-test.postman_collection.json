@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "a98574e4-32f5-4697-b30f-7931ae7814ef",
+		"name": "vidext-tech-test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1490743"
+	},
+	"item": [
+		{
+			"name": "Get stored snapshot",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trpc/getSnapshot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trpc",
+						"getSnapshot"
+					]
+				},
+				"description": "Get the stored snapshot if one exists"
+			},
+			"response": []
+		},
+		{
+			"name": "Store snapshot",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"document\": {\n        \"store\": {\n            \"document:document\": {\n                \"gridSize\": 10,\n                \"name\": \"\",\n                \"meta\": {},\n                \"id\": \"document:document\",\n                \"typeName\": \"document\"\n            },\n            \"page:page\": {\n                \"meta\": {},\n                \"id\": \"page:page\",\n                \"name\": \"Page 1\",\n                \"index\": \"a1\",\n                \"typeName\": \"page\"\n            },\n            \"shape:54YaWz4ExdonjIiO3Wu1z\": {\n                \"x\": 286.21875,\n                \"y\": 148.30078125,\n                \"rotation\": 0,\n                \"isLocked\": false,\n                \"opacity\": 1,\n                \"meta\": {},\n                \"id\": \"shape:54YaWz4ExdonjIiO3Wu1z\",\n                \"type\": \"geo\",\n                \"props\": {\n                    \"w\": 859.05078125,\n                    \"h\": 428.89453124999994,\n                    \"geo\": \"rectangle\",\n                    \"color\": \"black\",\n                    \"labelColor\": \"black\",\n                    \"fill\": \"none\",\n                    \"dash\": \"draw\",\n                    \"size\": \"m\",\n                    \"font\": \"draw\",\n                    \"align\": \"middle\",\n                    \"verticalAlign\": \"middle\",\n                    \"growY\": 0,\n                    \"url\": \"\",\n                    \"scale\": 1,\n                    \"richText\": {\n                        \"type\": \"doc\",\n                        \"content\": [\n                            {\n                                \"type\": \"paragraph\",\n                                \"attrs\": {\n                                    \"dir\": \"auto\"\n                                },\n                                \"content\": [\n                                    {\n                                        \"type\": \"text\",\n                                        \"text\": \"A rectangle with text created using the API\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                },\n                \"parentId\": \"page:page\",\n                \"index\": \"a1\",\n                \"typeName\": \"shape\"\n            }\n        },\n        \"schema\": {\n            \"schemaVersion\": 2,\n            \"sequences\": {\n                \"com.tldraw.store\": 4,\n                \"com.tldraw.asset\": 1,\n                \"com.tldraw.camera\": 1,\n                \"com.tldraw.document\": 2,\n                \"com.tldraw.instance\": 25,\n                \"com.tldraw.instance_page_state\": 5,\n                \"com.tldraw.page\": 1,\n                \"com.tldraw.instance_presence\": 6,\n                \"com.tldraw.pointer\": 1,\n                \"com.tldraw.shape\": 4,\n                \"com.tldraw.asset.bookmark\": 2,\n                \"com.tldraw.asset.image\": 5,\n                \"com.tldraw.asset.video\": 5,\n                \"com.tldraw.shape.arrow\": 6,\n                \"com.tldraw.shape.bookmark\": 2,\n                \"com.tldraw.shape.draw\": 2,\n                \"com.tldraw.shape.embed\": 4,\n                \"com.tldraw.shape.frame\": 1,\n                \"com.tldraw.shape.geo\": 10,\n                \"com.tldraw.shape.group\": 0,\n                \"com.tldraw.shape.highlight\": 1,\n                \"com.tldraw.shape.image\": 5,\n                \"com.tldraw.shape.line\": 5,\n                \"com.tldraw.shape.note\": 9,\n                \"com.tldraw.shape.text\": 3,\n                \"com.tldraw.shape.video\": 3,\n                \"com.tldraw.binding.arrow\": 1\n            }\n        }\n    },\n    \"session\": {\n        \"version\": 0,\n        \"currentPageId\": \"page:page\",\n        \"exportBackground\": true,\n        \"isFocusMode\": false,\n        \"isDebugMode\": false,\n        \"isToolLocked\": false,\n        \"isGridMode\": false,\n        \"pageStates\": [\n            {\n                \"pageId\": \"page:page\",\n                \"camera\": {\n                    \"x\": 0,\n                    \"y\": 0,\n                    \"z\": 1\n                },\n                \"selectedShapeIds\": [],\n                \"focusedGroupId\": null\n            }\n        ]\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trpc/setSnapshot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trpc",
+						"setSnapshot"
+					]
+				},
+				"description": "The provided item should be an object like the example provided. This objects was obtained from the tldraw library using \"getSnapshot(store)\" function over the store of the editor, which returns a TLEditorSnapshot object. Other objects will be stored, but the store will not load if the format is not correct."
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Snapshot",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/trpc/deleteSnapshot",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"trpc",
+						"deleteSnapshot"
+					]
+				},
+				"description": "Be aware this action is destructive and will delete the record from the DB instead of setting a deletedAt to a Date. This is only available from the API and is not used on the App."
+			},
+			"response": []
+		}
+	]
+}
